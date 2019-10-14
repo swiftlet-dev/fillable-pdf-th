@@ -3,14 +3,14 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'fillable-pdf/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'fillable-pdf'
-  spec.version       = FillablePDF::VERSION
-  spec.authors       = ['Vadim Kononov']
-  spec.email         = ['vadim@poetic.com']
+  spec.name          = 'fillable-pdf-th'
+  spec.version       = FillablePDFTH::VERSION
+  spec.authors       = ['Swiftlet']
+  spec.email         = ['swiftlet.dev@gmail.com']
 
   spec.summary       = 'Fill out or extract field values from simple fillable PDF forms using iText.'
-  spec.description   = 'FillablePDF is an extremely simple and lightweight utility that bridges iText and Ruby in order to fill out fillable PDF forms or extract field values from previously filled out PDF forms.'
-  spec.homepage      = 'https://github.com/vkononov/fillable-pdf'
+  spec.description   = 'fillable-pdf-th is an extension from fillable-pdf(vkononov) but supported Thai language.'
+  spec.homepage      = 'https://github.com/swiftlet-dev/fillable-pdf-th'
   spec.license       = 'MIT'
 
   spec.files = Dir.chdir(File.expand_path(__dir__)) do

@@ -114,6 +114,19 @@ pdf.names
 pdf.values
 ```
 
+```ruby
+# set font in pdf form
+# default is angsana_new.tiff
+# your font path: 'font/path/myfont.tiff'
+pdf.set_font(your_font_path)
+```
+
+```ruby
+# set font size in pdf form
+# default is 12.00
+pdf.set_size(15)
+```
+
 Once the PDF is filled out you can either overwrite it or save it as another file:
 
 ```ruby

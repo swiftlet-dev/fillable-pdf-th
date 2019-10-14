@@ -1,10 +1,25 @@
 require_relative 'fillable-pdf/itext'
 
 class Field
-  PDF_NAME = Rjb.import('com.itextpdf.kernel.pdf.PdfName')
+  class << self
+    def pdf_name
+      @pdf_nanme ||= Rjb.import('com.itextpdf.kernel.pdf.PdfName')
+    end
 
-  BUTTON = PDF_NAME.Btn.toString
-  CHOICE = PDF_NAME.Ch.toString
-  SIGNATURE = PDF_NAME.Sig.toString
-  TEXT = PDF_NAME.Tx.toString
+    def button
+      @button = pdf_name.Btn.toString
+    end
+
+    def choice
+      @choice = pdf_name.Ch.toString
+    end
+
+    def signature
+      @signature = pdf_name.Sig.toString
+    end
+
+    def text
+      @text = pdf_name.Tx.toString
+    end
+  end
 end

@@ -10,7 +10,10 @@ class FillablePDF
   PDF_DOCUMENT = Rjb.import 'com.itextpdf.kernel.pdf.PdfDocument'
   PDF_ACRO_FORM = Rjb.import 'com.itextpdf.forms.PdfAcroForm'
   PDF_FORM_FIELD = Rjb.import 'com.itextpdf.forms.fields.PdfFormField'
-
+  PDF_FONT_ENCODE = Rjb.import 'com.itextpdf.io.font.PdfEncodings'
+  PDF_FONT = Rjb.import 'com.itextpdf.kernel.font.PdfFont'
+  PDF_FONT_FACTORY = Rjb.import 'com.itextpdf.kernel.font.PdfFontFactory'
+  FONT = './default-font/angsana_new.ttf'
   ##
   # Opens a given fillable-pdf PDF file and prepares it for modification.
   #
@@ -24,9 +27,21 @@ class FillablePDF
     @pdf_writer = PDF_WRITER.new @byte_stream
     @pdf_doc = PDF_DOCUMENT.new @pdf_reader, @pdf_writer
     @pdf_form = PDF_ACRO_FORM.getAcroForm(@pdf_doc, true)
+    @size = 12.00
+    set_font
     @form_fields = @pdf_form.getFormFields
   end
 
+  ##
+  # Set font in PDF file
+  #
+  def set_font(font_path=FONT)
+    @pdf_font = PDF_FONT_FACTORY.createFont(font_path, PDF_FONT_ENCODE.IDENTITY_H)
+  end
+
+  def set_size(size=@size)
+    @size = size.to_f
+  end
   ##
   # Determines whether the form has any fields.
   #
@@ -91,7 +106,7 @@ class FillablePDF
   #   @param [String|Symbol] value the field value
   #
   def set_field(key, value)
-    pdf_field(key).setValue(value.to_s)
+    pdf_field(key).setValue(value.to_s, @pdf_font, @size)
   end
 
   ##
