@@ -4,7 +4,7 @@ require 'fillable-pdf/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'fillable-pdf-th'
-  spec.version       = FillablePDFTH::VERSION
+  spec.version       = FillablePDF::VERSION
   spec.authors       = ['Swiftlet']
   spec.email         = ['swiftlet.dev@gmail.com']
 
