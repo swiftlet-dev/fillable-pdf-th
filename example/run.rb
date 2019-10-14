@@ -1,7 +1,7 @@
-require 'fillable-pdf'
+require 'fillable-pdf-th'
 
 # opening a fillable PDF
-pdf = FillablePDF.new('input.pdf')
+pdf = FillablePDFTH.new('input.pdf')
 
 # total number of fields
 if pdf.any_fields?
@@ -60,5 +60,5 @@ puts "Signatory: #{pdf.field(:first_name)} #{pdf.field(:last_name)}"
 pdf.save_as('output.pdf')
 
 # saving another copy of the filled out PDF in another file and making it non-editable
-pdf = FillablePDF.new('output.pdf')
+pdf = FillablePDFTH.new('output.pdf')
 pdf.save_as 'output.flat.pdf', flatten: true

@@ -35,10 +35,10 @@ require 'fillable-pdf-th'
 First of all, you should open a fillable PDF file:
 
 ```ruby
-pdf = FillablePDF.new 'input.pdf'
+pdf = FillablePDFTH.new 'input.pdf'
 ```
 
-An instance of `FillablePDF` has the following methods at its disposal:
+An instance of `FillablePDFTH` has the following methods at its disposal:
 
 ```ruby
 fillable-pdf
@@ -148,10 +148,10 @@ pdf.save_as('output.pdf', flatten: true)
 The following example [example.rb](example/run.rb) and the input file [input.pdf](example/input.pdf) are located in the `test` directory. It uses all of the methods that are described above and generates the output files [output.pdf](example/output.pdf) and [output.flat.pdf](example/output.flat.pdf).
 
 ```ruby
-require 'fillable-pdf'
+require 'fillable-pdf-th'
 
 # opening a fillable PDF
-pdf = FillablePDF.new('input.pdf')
+pdf = FillablePDFTH.new('input.pdf')
 
 # total number of fields
 if pdf.any_fields?
@@ -210,7 +210,7 @@ puts "Signatory: #{pdf.field(:first_name)} #{pdf.field(:last_name)}"
 pdf.save_as('output.pdf')
 
 # saving another copy of the filled out PDF in another file and making it non-editable
-pdf = FillablePDF.new('output.pdf')
+pdf = FillablePDFTH.new('output.pdf')
 pdf.save_as 'output.flat.pdf', flatten: true
 ```
 

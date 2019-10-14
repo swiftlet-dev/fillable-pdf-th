@@ -13,7 +13,7 @@ Layout/SpaceInsideHashLiteralBraces:
 
 Metrics/LineLength:
   Exclude:
-    - fillable-pdf.gemspec
+    - fillable-pdf-th.gemspec
   Max: 120
 
 Naming/AccessorMethodName:

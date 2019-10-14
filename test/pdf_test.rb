@@ -2,12 +2,12 @@ require 'test_helper'
 
 class PdfTest < Minitest::Test
   def setup
-    @pdf = FillablePDF.new 'test/files/filled-out.pdf'
+    @pdf = FillablePDFTH.new 'test/files/filled-out.pdf'
     @tmp = 'test/files/tmp.pdf'
   end
 
   def test_that_it_has_a_version_number
-    refute_nil FillablePDF::VERSION
+    refute_nil FillablePDFTH::VERSION
   end
 
   def test_that_a_file_is_loaded
@@ -16,7 +16,7 @@ class PdfTest < Minitest::Test
 
   def test_that_an_error_is_thrown_for_non_existing_file
     err = assert_raises IOError do
-      @pdf = FillablePDF.new 'test.pdf'
+      @pdf = FillablePDFTH.new 'test.pdf'
     end
     assert_match 'is not found', err.message
   end
@@ -57,7 +57,7 @@ class PdfTest < Minitest::Test
   def test_that_a_field_can_be_renamed
     @pdf.rename_field(:last_name, :surname)
     @pdf.save_as(@tmp)
-    @pdf = FillablePDF.new(@tmp)
+    @pdf = FillablePDFTH.new(@tmp)
     err = assert_raises RuntimeError do
       @pdf.field(:last_name)
     end
@@ -83,9 +83,9 @@ class PdfTest < Minitest::Test
 
   def test_that_a_file_can_be_saved
     @pdf.save_as(@tmp)
-    refute_nil FillablePDF.new(@tmp)
-    @pdf = FillablePDF.new(@tmp)
+    refute_nil FillablePDFTH.new(@tmp)
+    @pdf = FillablePDFTH.new(@tmp)
     @pdf.save
-    refute_nil FillablePDF.new(@tmp)
+    refute_nil FillablePDFTH.new(@tmp)
   end
 end

@@ -1,4 +1,4 @@
-require_relative 'fillable-pdf/itext'
+require_relative 'fillable-pdf-th/itext'
 
 class Field
   class << self

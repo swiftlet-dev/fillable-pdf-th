@@ -1,8 +1,8 @@
-require_relative 'fillable-pdf/itext'
+require_relative 'fillable-pdf-th/itext'
 require_relative 'field'
 require 'securerandom'
 
-class FillablePDF
+class FillablePDFTH
   # required Java imports
   BYTE_STREAM = Rjb.import 'com.itextpdf.io.source.ByteArrayOutputStream'
   PDF_READER = Rjb.import 'com.itextpdf.kernel.pdf.PdfReader'

@@ -1,3 +1,3 @@
-class FillablePDF
+class FillablePDFTH
   VERSION = '1.0.0'
 end

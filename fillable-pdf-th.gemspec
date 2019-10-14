@@ -1,10 +1,10 @@
 lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'fillable-pdf/version'
+require 'fillable-pdf-th/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'fillable-pdf-th'
-  spec.version       = FillablePDF::VERSION
+  spec.version       = FillablePDFTH::VERSION
   spec.authors       = ['Swiftlet']
   spec.email         = ['swiftlet.dev@gmail.com']
 
