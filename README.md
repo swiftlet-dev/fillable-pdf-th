@@ -14,7 +14,7 @@ FillablePDF is an extremely simple and lightweight utility that bridges iText an
 
 Add this line to your application's Gemfile:
 
-    gem 'fillable-pdf'
+    gem 'fillable-pdf-th'
 
 And then execute:
 
@@ -22,12 +22,12 @@ And then execute:
 
 Or install it yourself as:
 
-    gem install fillable-pdf
+    gem install fillable-pdf-th
 
 If you are using this gem in a script, you need to require it manually:
 
 ```ruby
-require 'fillable-pdf'
+require 'fillable-pdf-th'
 ```
 
 ## Usage
