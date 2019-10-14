@@ -13,7 +13,7 @@ class FillablePDFTH
   PDF_FONT_ENCODE = Rjb.import 'com.itextpdf.io.font.PdfEncodings'
   PDF_FONT = Rjb.import 'com.itextpdf.kernel.font.PdfFont'
   PDF_FONT_FACTORY = Rjb.import 'com.itextpdf.kernel.font.PdfFontFactory'
-  FONT = './default-font/angsana_new.ttf'
+  FONT = 'default-font/angsana_new.ttf'
   ##
   # Opens a given fillable-pdf PDF file and prepares it for modification.
   #
