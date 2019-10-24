@@ -30,6 +30,16 @@ class FillablePDFTH
     @size = 12.00
     set_font
     @form_fields = @pdf_form.getFormFields
+    
+    @checkbox_style = {
+      'check' => PDF_FORM_FIELD.TYPE_CHECK,
+      'circle' => PDF_FORM_FIELD.TYPE_CIRCLE,
+      'cross' => PDF_FORM_FIELD.TYPE_CROSS,
+      'diamond' => PDF_FORM_FIELD.TYPE_DIAMOND,
+      'square' => PDF_FORM_FIELD.TYPE_SQUARE,
+      'star' => PDF_FORM_FIELD.TYPE_STAR
+    }
+    set_checkbox_style
   end
 
   ##
@@ -37,6 +47,12 @@ class FillablePDFTH
   #
   def set_font(font_path=FONT)
     @pdf_font = PDF_FONT_FACTORY.createFont(font_path, PDF_FONT_ENCODE.IDENTITY_H)
+  end
+
+  def set_checkbox_style(mark_style='check')
+    fields.each do |key, value|
+      pdf_field(key).setCheckType(@checkbox_style[mark_style] || @checkbox_style['check'] ) if field_type(key).eql?('/Btn')
+    end
   end
 
   def set_size(size=@size)

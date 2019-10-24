@@ -127,6 +127,19 @@ pdf.set_font(your_font_path)
 pdf.set_size(15)
 ```
 
+```ruby
+# set checkbox mark style in pdf form
+# default is 'check' ✓
+# list style
+# - ✓ check
+# - ☓ cross
+# - ☐ square
+# - ◆ diamond
+# - ★ star
+# all checkbox type become same style
+pdf.set_checkbox_style('cross')
+```
+
 Once the PDF is filled out you can either overwrite it or save it as another file:
 
 ```ruby
