@@ -43,6 +43,16 @@ class FillablePDFTH
   end
 
   ##
+  # get position form dimention field
+  ##
+  def get_position(key)
+    position = pdf_field(key).getWidgets().get(0).getRectangle()
+    width =  position.getAsNumber(2).getValue() - position.getAsNumber(0).getValue();
+    height = position.getAsNumber(3).getValue() - position.getAsNumber(1).getValue();
+    width, height
+  end
+
+  ##
   # Set font in PDF file
   #
   def set_font(font_path=FONT)
