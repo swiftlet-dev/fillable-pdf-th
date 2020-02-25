@@ -43,9 +43,22 @@ class FillablePDFTH
   end
 
   ##
-  # get position form dimention field
+  # get position field
   ##
   def get_position(key)
+    rectangle = pdf_field(key).getWidgets().get(0).getRectangle()
+    position = []
+    position << rectangle.getAsNumber(0).getValue() 
+    position << rectangle.getAsNumber(1).getValue()
+    position << rectangle.getAsNumber(2).getValue() 
+    position << rectangle.getAsNumber(3).getValue()
+    position
+  end
+
+  ##
+  # get dimention form field
+  ##
+  def get_dimention(key)
     position = pdf_field(key).getWidgets().get(0).getRectangle()
     width =  position.getAsNumber(2).getValue() - position.getAsNumber(0).getValue();
     height = position.getAsNumber(3).getValue() - position.getAsNumber(1).getValue();
