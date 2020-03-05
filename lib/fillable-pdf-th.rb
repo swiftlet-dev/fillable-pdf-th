@@ -68,8 +68,8 @@ class FillablePDFTH
   ##
   # Set font in PDF file
   #
-  def set_font(font_path=FONT, subset=false)
-    @pdf_font = PDF_FONT_FACTORY.createFont(font_path, PDF_FONT_ENCODE.IDENTITY_H)
+  def set_font(font_path=FONT, embeded=false, cache=false, subset=false)
+    @pdf_font = PDF_FONT_FACTORY.createFont(font_path, PDF_FONT_ENCODE.IDENTITY_H, embeded, cache)
     @pdf_font.setSubset(subset)
   end
 
